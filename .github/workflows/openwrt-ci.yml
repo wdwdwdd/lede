@@ -85,6 +85,20 @@ jobs:
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
 
+      # - name: 蓝色主题
+      #   run: |
+      #     cd package
+      #     mkdir openwrt-packages
+      #     cd openwrt-packages
+      #     git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+
+      #     # LuCI主题:
+      #     cat >> .config <<EOF
+      #     CONFIG_PACKAGE_luci-theme-argon=y
+      #     CONFIG_PACKAGE_luci-theme-atmaterial=y
+      #     EOF
+          
+
       - name: Make download
         run: |
           make download -j8 || make download -j1 V=s
